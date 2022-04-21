@@ -1,5 +1,5 @@
 let btn = document.querySelector('#verSenha')
-let btnConfirme = document.querySelector('#verConfirmeSenha')
+let btnConfirma = document.querySelector('#verConfirmaSenha')
 
 let  nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
@@ -10,13 +10,13 @@ let labelUsuario = document.querySelector('#labelUsuario')
 let  senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
 
-let  confirmaSenha= document.querySelector('#confirmeSenha')
-let labelConfirmeSenha = document.querySelector('#labelConfirmeSenha')
+let  confirmaSenha= document.querySelector('#confirmaSenha')
+let labelConfirmaSenha = document.querySelector('#labelConfirmaSenha')
 
 nome.addEventListener('keyup', () => {
     if(nome.value.length <= 2) {
         labelNome.setAttribute('style', 'color:red')
-        labelNome.innerHTML = '*Insira no minimo 3 caracteres'
+        labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
         nome.setAttribute('style', 'border-color: red')
     }else {
         labelNome.setAttribute('style', 'color:green')
@@ -28,12 +28,36 @@ nome.addEventListener('keyup', () => {
 usuario.addEventListener('keyup', () => {
     if(usuario.value.length <= 4) {
         labelUsuario.setAttribute('style', 'color:red')
-        labelUsuario.innerHTML = '*Insira no minimo 5 caracteres'
+        labelUsuario.innerHTML = 'Usuario *Insira no minimo 5 caracteres'
         usuario.setAttribute('style', 'border-color: red')
     }else {
         labelUsuario.setAttribute('style', 'color:green')
         labelUsuario.innerHTML = 'Usuario'
         usuario.setAttribute('style', 'border-color: green')
+    }
+})
+
+senha.addEventListener('keyup', () => {
+    if(senha.value.length <= 5) {
+        labelSenha.setAttribute('style', 'color:red')
+        labelSenha.innerHTML = 'Senha *Insira no minimo 6 caracteres'
+        senha.setAttribute('style', 'border-color: red')
+    }else {
+        labelSenha.setAttribute('style', 'color:green')
+        labelSenha.innerHTML = 'Senha'
+        senha.setAttribute('style', 'border-color: green')
+    }
+})
+
+confirmaSenha.addEventListener('keyup', () => {
+    if(senha.value != confirmaSenha.value) {
+        labelConfirmaSenha.setAttribute('style', 'color:red')
+        labelConfirmaSenha.innerHTML = 'Confirmar Senha *As senhas não conferem'
+        confirmaSenha.setAttribute('style', 'border-color: red')
+    }else {
+        labelConfirmaSenha.setAttribute('style', 'color:green')
+        labelConfirmaSenha.innerHTML = 'Confirmar Senha'
+        confirmaSenha.setAttribute('style', 'border-color: green')
     }
 })
 
@@ -52,12 +76,12 @@ btn.addEventListener('click', () => {
     }
 })
 
-btnConfirme.addEventListener('click', () => {
-    let inputConfirmeSenha = document.querySelector('#confirmeSenha')
+btnConfirma.addEventListener('click', () => {
+    let inputConfirmaSenha = document.querySelector('#confirmaSenha')
 
-    if (inputConfirmeSenha.getAttribute('type') == 'password') {
-        inputConfirmeSenha.setAttribute('type', 'text')
+    if (inputConfirmaSenha.getAttribute('type') == 'password') {
+        inputConfirmaSenha.setAttribute('type', 'text')
     } else {
-        inputConfirmeSenha.setAttribute('type', 'password')
+        inputConfirmaSenha.setAttribute('type', 'password')
     }
 })
