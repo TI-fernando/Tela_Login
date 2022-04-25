@@ -3,15 +3,19 @@ let btnConfirma = document.querySelector('#verConfirmaSenha')
 
 let  nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
+let validNome = false
 
 let  usuario = document.querySelector('#usuario')
 let labelUsuario = document.querySelector('#labelUsuario')
+let validUsuario = false
 
 let  senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
+let validSenha= false
 
 let  confirmaSenha= document.querySelector('#confirmaSenha')
 let labelConfirmaSenha = document.querySelector('#labelConfirmaSenha')
+let validConfimaSenha = false
 
 nome.addEventListener('keyup', () => {
     if(nome.value.length <= 2) {
@@ -63,7 +67,11 @@ confirmaSenha.addEventListener('keyup', () => {
 
 
 function cadastrar() {
-    
+    if(validNome || validUsuario || validSenha || validConfimaSenha){
+
+    } else {
+        alert('Campos estão vazios')
+    }
 }
 
 btn.addEventListener('click', () => {
